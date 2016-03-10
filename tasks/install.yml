@@ -19,6 +19,12 @@
   tags:
     - configure
 
+- name: use specific theme
+  template:
+    src: theme.zsh.j2
+    dest: "{{ oh_my_zsh_user_home }}/.oh-my-zsh/custom/theme.zsh"
+  when: oh_my_zsh_theme is defined
+
 - name: "Switch to shell to zsh"
   user:
     name: "{{ oh_my_zsh_user }}"
