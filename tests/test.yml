@@ -1,3 +1,4 @@
 - hosts: localhost
   roles:
     - role: ../../ansible-oh-my-zsh
+      oh_my_zsh_user: travis

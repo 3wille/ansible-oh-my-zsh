@@ -2,7 +2,7 @@
 # tasks file for debian
 
 - name: "Install ZSH"
-  sudo: yes
+  become: yes
   apt:
       name: "{{ item }}"
       state: present
