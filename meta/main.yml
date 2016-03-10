@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Rahul Mohandas
+  author: Frederik Wille
   description: Installs and configures oh-my-zsh
   license: MIT
   min_ansible_version: 1.2
@@ -45,4 +45,5 @@ galaxy_info:
     - wheezy
   categories:
   - system
+  - shell
 dependencies: []

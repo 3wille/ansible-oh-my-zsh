@@ -1,7 +1,8 @@
-[![Build Status](https://travis-ci.org/rahul0705/ansible-oh-my-zsh.svg?branch=master)](https://travis-ci.org/rahul0705/ansible-oh-my-zsh)
+[![Build Status](https://travis-ci.org/3wille/ansible-oh-my-zsh.svg?branch=master)](https://travis-ci.org/3wille/ansible-oh-my-zsh)
 
 Ansible Oh-My-Zsh
 =========
+Forked from [rahul0705/ansible-oh-my-zsh](https://github.com/rahul0705/ansible-oh-my-zsh)
 
 Ansible role to install and configure Oh-My-Zsh
 
@@ -14,8 +15,8 @@ Role Variables
 --------------
 
 ```yaml
-oh_my_zsh_user: rahul
-oh_my_zsh_user_home: ~{{ oh_my_zsh_user_home }}
+oh_my_zsh_user: your_user
+oh_my_zsh_user_home: /home/{{ oh_my_zsh_user_home }}
 ```
 
 Dependencies
@@ -40,8 +41,8 @@ Example Playbook
 - hosts: all
   roles:
     - role: oh_my_zsh
-      oh_my_zsh_user: rahul
-      oh_my_zsh_home: /opt/rahul
+      oh_my_zsh_user: your_user
+      oh_my_zsh_home: /home/{{ oh_my_zsh_user_home }}
 ```
 
 License
