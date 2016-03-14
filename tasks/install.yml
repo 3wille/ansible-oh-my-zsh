@@ -21,7 +21,13 @@
     dest: "{{ oh_my_zsh_user_home }}/.oh-my-zsh/custom/theme.zsh"
   when: oh_my_zsh_theme is defined
 
-- name: "Switch to shell to zsh"
+- name: purge theme line from .zshrc
+  lineinfile:
+    state: absent
+    line: ZSH_THEME="robbyrussell"
+    dest: "{{ oh_my_zsh_user_home }}/.zshrc"
+  when: oh_my_zsh_theme is defined
+
 - name: place aliases
   template:
     src: aliases.zsh.j2
