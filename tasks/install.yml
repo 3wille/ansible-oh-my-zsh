@@ -8,16 +8,12 @@
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh
     dest: "{{ oh_my_zsh_user_home }}/.oh-my-zsh"
-  tags:
-    - install
 
 - name: "Create new zshrc"
   copy:
     src: "{{ oh_my_zsh_user_home }}/.oh-my-zsh/templates/zshrc.zsh-template"
     dest: "{{ oh_my_zsh_user_home }}/.zshrc"
     remote_src: yes
-  tags:
-    - configure
 
 - name: use specific theme
   template:
@@ -30,5 +26,3 @@
     name: "{{ oh_my_zsh_user }}"
     shell: /usr/bin/zsh
   become: yes
-  tags:
-    - configure
