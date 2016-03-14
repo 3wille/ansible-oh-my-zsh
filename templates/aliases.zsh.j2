@@ -1,0 +1,3 @@
+{% for item in oh_my_zsh_aliases %}
+alias {{ item.name }}="{{ item.target }}"
+{% endfor %}

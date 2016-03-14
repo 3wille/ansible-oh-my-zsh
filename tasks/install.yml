@@ -22,7 +22,15 @@
   when: oh_my_zsh_theme is defined
 
 - name: "Switch to shell to zsh"
+- name: place aliases
+  template:
+    src: aliases.zsh.j2
+    dest: "{{ oh_my_zsh_user_home }}/.oh-my-zsh/custom/aliases.zsh"
+  when: oh_my_zsh_aliases is defined
+
+- name: "Switch shell to zsh"
   user:
     name: "{{ oh_my_zsh_user }}"
     shell: /usr/bin/zsh
+    append: yes
   become: yes
