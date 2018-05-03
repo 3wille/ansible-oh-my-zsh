@@ -1,7 +1,7 @@
 ---
 # tasks file for install
 
-- include: debian.yml
+- import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: "Clone oh-my-zsh"
